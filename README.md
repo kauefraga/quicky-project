@@ -1,4 +1,4 @@
-<h1 align="center">Quicky Monitor</h1>
+<h1 align="center">Quicky Project</h1>
 
 <p align="center">
   <img
@@ -35,7 +35,6 @@ cargo run
 ## 💻 Technologies
 
 - 🦀 [Rust](https://rust-lang.org) - A fast and secure programming language
-  - ⏰ [std::time::Duration](https://doc.rust-lang.org/std/time/struct.Duration.html) and [std::thread::sleep](https://doc.rust-lang.org/std/thread/fn.sleep.html)
   - 💻 [std::process::Command](https://doc.rust-lang.org/std/process/struct.Command.html)
 - 🎨 [console](https://crates.io/crates/console)
 - 🤖 [clap](https://crates.io/crates/clap)
