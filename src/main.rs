@@ -1,14 +1,14 @@
 use std::process::{Command, exit};
-use std::time::Duration;
-use std::thread;
 use console::style;
-use quicky_project::cli;
+use qp::cli;
 
 fn main() {
   let matches = cli().get_matches();
 
   let package_manager = "pnpm";
-  let delay = Duration::from_millis(500);
+  // let mut delay = Duration::from_millis(500);
+
+  let mut stdout = Command::new(package_manager);
 
   match matches.subcommand() {
     Some(("create", args)) => {
@@ -21,32 +21,30 @@ fn main() {
         exit(0);
       }
 
-      let mut output = Command::new(package_manager)
+      stdout
         .arg("init")
         .spawn()
         .unwrap();
-
-      thread::sleep(delay);
-
-      output.kill().unwrap();
     }
 
-    // Some(("config", args)) => {
-    //   let ts = args.get_one::<bool>("npm").unwrap();
+    Some(("config", args)) => {
+      let ts = *args.get_one::<bool>("ts").unwrap();
 
-    //   if *ts {
-    //     Command::new(package_manager)
-    //       .arg("i")
-    //       .arg("-D")
-    //       .arg("typescript @types/node ts-node-dev")
-    //       .spawn()
-    //       .unwrap();
-    //   }
+      if !ts {
+        println!("{}", style("If you do not want to use typescript, you can init confit it by yourself :)").yellow());
+        exit(0);
+      }
 
-    //   // ...
-    // }
+      stdout
+        .arg("i") // install
+        .arg("-D")
+        .arg("typescript")
+        .arg("ts-node-dev")
+        .arg("@types/node")
+        .spawn()
+        .unwrap();
+    }
 
     _ => unreachable!()
   }
-
 }
