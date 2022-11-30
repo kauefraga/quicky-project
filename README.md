@@ -23,6 +23,13 @@
 
 <h4 align="center">⚡ Set up a TS project as fast as you want ⚡</h4>
 
+## ✨ Features
+
+- **Colorized Outputs**: Everything looks better with some colors
+- **Usage**:
+  - `init` = `pnpm init`
+  - `config` = `pnpm i -D typescript ...`
+
 ## ⬇️ How to install and contribute
 
 ```bash
@@ -36,8 +43,16 @@ cargo run
 
 - 🦀 [Rust](https://rust-lang.org) - A fast and secure programming language
   - 💻 [std::process::Command](https://doc.rust-lang.org/std/process/struct.Command.html)
+  - ❌ [std::process::exit](https://doc.rust-lang.org/std/process/fn.exit.html)
 - 🎨 [console](https://crates.io/crates/console)
 - 🤖 [clap](https://crates.io/crates/clap)
+
+## 💬 Coming soon...
+
+- Change package managers (flags)
+- `create` - Create fully featured projects
+  - `create api` (ts, eslint, express, vitest, cors, dotenv...)
+  - `create cli` (python/rust...)
 
 ## 📝 License
 
