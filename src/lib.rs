@@ -3,4 +3,4 @@ mod io;
 
 pub use self::cli::cli;
 
-pub use self::io::{warn, error};
+pub use self::io::Console;
