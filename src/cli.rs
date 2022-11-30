@@ -7,8 +7,8 @@ pub fn cli() -> Command {
     .arg_required_else_help(true)
     .allow_external_subcommands(true)
     .subcommand(
-      Command::new("create")
-        .about("Create a new project (using pnpm)")
+      Command::new("init")
+        .about("Initialize a new project (using pnpm)")
         .arg(arg!(--npm "Use npm instead of pnpm"))
     )
     .subcommand(
