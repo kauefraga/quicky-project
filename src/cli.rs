@@ -16,7 +16,6 @@ pub fn cli() -> Command {
         .about("Install packages and configure them")
         .arg(arg!(--typescript "Use typescript"))
         .arg(arg!(--eslint "Use eslint base (airbnb)"))
-        .arg(arg!(-a --all "Use all configs"))
         .arg_required_else_help(true)
     )
 

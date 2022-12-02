@@ -11,8 +11,10 @@ fn main() {
 
   let mut cmd = Command::new(package_manager);
 
+  console.warn("You must ctrl-c after the execution get done (help me to fix it)");
+
   match matches.subcommand() {
-    Some(("create", args)) => {
+    Some(("init", args)) => {
       let npm = *args.get_one::<bool>("npm").unwrap();
 
       if npm {
@@ -30,7 +32,6 @@ fn main() {
     Some(("config", args)) => {
       let ts = *args.get_one::<bool>("typescript").unwrap();
       let es = *args.get_one::<bool>("eslint").unwrap();
-      // let all = *args.get_one::<bool>("all").unwrap();
 
       if ts {
         cmd
@@ -43,20 +44,20 @@ fn main() {
         console.warn("You should see https://npm.im/eslint-config-airbnb-base");
         console.warn("And also https://npm.im/eslint-config-airbnb-typescript");
 
-        // cmd
-        //   .arg("install")
-        //   .arg("-D")
-        //   .arg("eslint@\'^7.32.0 || ^8.2.0\'")
-        //   .arg("eslint-plugin-import@^2.25.2")
-        //   .arg("eslint-config-airbnb-typescript")
-        //   .arg("@typescript-eslint/eslint-plugin@^5.13.0")
-        //   .arg("@typescript-eslint/parser@^5.0.0")
-        //   .spawn()
-        //   .unwrap();
+        cmd
+          .arg("install")
+          .arg("-D")
+          .arg("eslint@^8.2.0")
+          .arg("eslint-plugin-import@^2.25.2")
+          .arg("eslint-config-airbnb-typescript")
+          .arg("@typescript-eslint/eslint-plugin@^5.13.0")
+          .arg("@typescript-eslint/parser@^5.0.0")
+          .spawn()
+          .unwrap();
       }
 
-      // console.warn("If you do not want to use typescript, you should search for nodemon :)")
-      //   .exit(0);
+      console.warn("If you do not want to use typescript, you should search for nodemon :)")
+        .exit(0);
     }
 
     _ => unreachable!()
