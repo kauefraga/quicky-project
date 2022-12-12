@@ -53,6 +53,9 @@ cargo run
 - `create` - Create fully featured projects
   - `create api` (ts, eslint, express, vitest, cors, dotenv...)
   - `create cli` (python/rust...)
+- `config` - Configure containers (and other stuff...)
+  - `config redis` (docker with bitnami/redis)
+  - `config postgres` (docker with bitnami/postgres)
 
 ## 📝 License
 
